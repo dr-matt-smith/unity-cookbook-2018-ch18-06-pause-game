@@ -8,27 +8,24 @@ using System.Collections;
  */ 
 public class QualityChooser : MonoBehaviour 
 {
-	// GUI panel for the pause screen
+	// UI GameObject containing panel for slider and text
 	public GameObject panelGo;
 
-	// GUI slider for adjusting quality settings from the pause screen
+	// UI slider for adjusting quality settings
 	public Slider slider;
 
-	// GUI Text label for quality settings
+	// UI Text label for quality settings
 	public Text textLabel;
-
-	// Boolean variable for adotping expensive changes (anti-alias, etc.) when changing quality settings
-	public bool expensiveQualitySettings = true;
 
 	/* ----------------------------------------
 	 * At Start, make mouse cursor invisible, adjust UI Slider settings 
 	 * and set UI Panel inactive.
 	 */ 	
 	void Awake () {
-		// Set number of available quality settings as the maximum value of the GUI slider
+		// Set number of available quality settings as the maximum value of the UI slider
 		slider.maxValue = QualitySettings.names.Length - 1;
 
-		// Set current Quality Level as the current value of the GUI slider
+		// Set current Quality Level as the current value of the UI slider
 		slider.value = QualitySettings.GetQualityLevel();
 
 		// make our slider and cursor active
